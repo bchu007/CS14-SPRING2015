@@ -8,6 +8,7 @@
 #include <iostream>
 #include <fstream>
 
+
 using namespace std;
 
 class WordLadder {
@@ -15,7 +16,7 @@ class WordLadder {
         WordLadder(const string lastfile) {
             fstream fin;
             string input;
-            fin.open(lastfile);
+            fin.open(lastfile.c_str());
             
             
             if(!fin.is_open()) {
@@ -72,7 +73,7 @@ class WordLadder {
 
 
             //remove first word if ever found
-            for(auto it = dict.begin(); it != dict.end(); ++it) {
+            for(list<string>::iterator it = dict.begin(); it != dict.end(); ++it) {
                 if(*it == start) {
                     it = dict.erase(it);
                     
@@ -85,7 +86,7 @@ class WordLadder {
             while(!wordList.empty()) {
                 //go through dictionary
                 
-                for(auto it = dict.begin(); it != dict.end(); it++) {
+                for(list<string>:: iterator it = dict.begin(); it != dict.end(); it++) {
                     
                     //check if valid word ladder
                     samelet = fiveLetSameChar(*it, wordList.front().top());
@@ -145,7 +146,7 @@ class WordLadder {
                     
                 }
                 if(more == true) {
-                    for(auto it = dict.begin(); it != dict.end(); it++) {
+                    for(list<string>::iterator it = dict.begin(); it != dict.end(); it++) {
                     
                     //check if valid word ladder
                     samelet = fiveLetSameChar(*it, wordList.front().top());

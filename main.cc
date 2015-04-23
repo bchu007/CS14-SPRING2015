@@ -6,6 +6,7 @@
 
 // main.cc
 #include "wordladder.H"
+#include <cstdlib>
 int main( int argc, char* argv[] ) {
     if ( argc != 4 ) {
         cout << "Usage: wordladder <dictionary_file> <start_word> <end_word>\n";
